@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title" id="todo-title">
+            {{ todo.title | customUppercase }}
+        </h5>
+        <p class="card-text" *ngIf="todo.description">
+            {{ todo.description }}
+        </p>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-danger" id="delete-button" (click)="remove()">Delete</button>
+    </div>
+</div>

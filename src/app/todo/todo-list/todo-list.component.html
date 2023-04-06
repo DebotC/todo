@@ -1,0 +1,18 @@
+<div class="col-8 offset-2">
+    <div class="d-flex justify-content-between">
+        <h1>Todo's</h1>
+        <button class="btn btn-primary">+ Todo</button>
+    </div>
+    <div>
+        <app-todo-create>
+            <button class="btn btn-primary" (click)="addTodo()">Add</button>
+        </app-todo-create>
+    </div>
+    <div *ngFor="let todo of todos$ | async; let i = index" class="mt-4">
+        <app-todo-detail [todo]="todo" (removeTodo)="removeTodo(i)"></app-todo-detail>
+    </div>
+    <!-- <div *ngFor="let todo of todos; let i = index" class="mt-4">
+        <app-todo-detail [todo]="todo" (removeTodo)="removeTodo(i)"></app-todo-detail>
+    </div> -->
+</div>
+

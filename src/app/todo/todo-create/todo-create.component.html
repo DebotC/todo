@@ -1,0 +1,13 @@
+<form [formGroup]="todoForm">
+    <div>
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" formControlName="title">
+    </div>
+    <div>
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="description">
+    </div>
+    <div>
+        <ng-content></ng-content>
+    </div>
+</form>
