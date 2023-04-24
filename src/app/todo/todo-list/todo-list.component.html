@@ -9,7 +9,8 @@
         </app-todo-create>
     </div>
     <div *ngFor="let todo of todos$ | async; let i = index" class="mt-4">
-        <app-todo-detail [todo]="todo" (removeTodo)="removeTodo(i)"></app-todo-detail>
+        <app-todo-detail [todo]="todo" (removeTodo)="removeTodo(i)" [showEdit]="isSelectedTodo(todo)" 
+            (click)="onSelectTodo(todo)"></app-todo-detail>
     </div>
     <!-- <div *ngFor="let todo of todos; let i = index" class="mt-4">
         <app-todo-detail [todo]="todo" (removeTodo)="removeTodo(i)"></app-todo-detail>

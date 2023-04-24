@@ -9,6 +9,7 @@ import { Todo } from '../model/todo';
 export class TodoDetailComponent {
 
   @Input() todo!: Todo;
+  @Input() showEdit = false;
   @Output() removeTodo = new EventEmitter();
 
   remove(): void {

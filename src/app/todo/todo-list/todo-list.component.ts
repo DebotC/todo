@@ -14,9 +14,18 @@ export class TodoListComponent {
   @ViewChild(TodoCreateComponent) todoCreateComponent!: TodoCreateComponent;
 
   todos$: Observable<Todo[]>;
+  selectedTodo?: Todo;
 
   constructor(private todoService: TodoService) {
     this.todos$ = this.todoService.todos$;
+  }
+
+  isSelectedTodo(todo: Todo): boolean {
+    return this.selectedTodo === todo;
+  }
+
+  onSelectTodo(todo: Todo): void {
+    this.selectedTodo = todo;
   }
 
   removeTodo(index: number): void {

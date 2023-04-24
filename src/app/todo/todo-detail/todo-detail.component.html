@@ -1,13 +1,22 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title" id="todo-title">
-            {{ todo.title | customUppercase }}
-        </h5>
-        <p class="card-text" *ngIf="todo.description">
-            {{ todo.description }}
-        </p>
+        <ng-container [ngTemplateOutlet]="!showEdit ? readInfo : edit"></ng-container>
+        
     </div>
     <div class="card-footer">
         <button class="btn btn-danger" id="delete-button" (click)="remove()">Delete</button>
     </div>
 </div>
+
+<ng-template #readInfo>
+    <h5 class="card-title">
+        {{ todo.title }}
+    </h5>
+    <p class="card-text" *ngIf="todo.description">
+        {{ todo.description }}
+    </p>
+</ng-template>
+
+<ng-template #edit>
+    <button>x</button>
+</ng-template>
